@@ -11,7 +11,7 @@ Note: This project was completed (for the most part) when I was working on proje
 The resume is supposed to look similar to this:
 ![](http://i.imgur.com/pWU1Xbl.png)
 
-And the repositoryincludes the following files:
+And the repository includes the following files:
 
 * **index.html**: The main HTML document. Contains links to all of the CSS and JS resources needed to render the resume, including resumeBuilder.js.
 * **js/helper.js**: Contains helper code needed to format the resume and build the map. Functionality was added by me per the assignment.
