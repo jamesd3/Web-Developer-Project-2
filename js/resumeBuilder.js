@@ -11,13 +11,13 @@ var bio = {
         "github" : "JamesD3",
         "location" : "San Diego, CA"
     },
-    "bioPic" : "images/JamesDeLapaIII.jpg"
+    "biopic" : "images/JamesDeLapaIII.jpg"
 };
 
 bio.display = function() {
     var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
     var formattedHeaderName = HTMLheaderName.replace("%data%", bio.name);
-    var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+    var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
     var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 
     $("#header").prepend(formattedHeaderRole);
@@ -60,8 +60,7 @@ bio.contacts.display = function() {
 bio.contacts.display();
 
 var work = {
-    "jobs" : [
-    {
+    "jobs" : [{
         "employer" : "Senior Care Directory",
         "title" : "President",
         "location" : "Del Mar Heights Road San Diego, CA",
@@ -105,17 +104,15 @@ work.display = function() {
 work.display();
 
 var education = {
-    "schools" : [
-      {
+    "schools" : [{
         "name" : "University of Southern California",
         "location" : "Los Angeles, CA",
         "degree" : "B.S.",
         "major" : ["Business Administration"],
         "years" : "2007 - 2010"
       }],
-    "onlineCourses" : [
-       {
-       	"title" : "Full Stack Web Developer Nanodegree",
+    "onlineCourses" : [{
+        "title" : "Full Stack Web Developer Nanodegree",
         "school" : "Udacity",
         "dates" : "October 2015 - January 2016",
         "url" : "http://www.udacity.com/"
@@ -160,7 +157,7 @@ education.display = function() {
 
 education.display();
 
-var projectData = {
+var projects = {
     "projects" : [
       {
         "title" : "Udacity Movie Project",
@@ -178,24 +175,24 @@ var projectData = {
         }]
 };
 
-projectData.display = function() {
-    for(var index in projectData.projects) {
+projects.display = function() {
+    for(var index in projects.projects) {
         $("#projects").append(HTMLprojectStart);
 
         // title
-        var formattedTitle = HTMLprojectTitle.replace("%data%", projectData.projects[index].title);
+        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[index].title);
         $(".project-entry:last").append(formattedTitle);
 
         // date, description, and image
-        var formattedDates = HTMLprojectDates.replace("%data%", projectData.projects[index].dates);
+        var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[index].dates);
         $(".project-entry:last").append(formattedDates);
 
-        var formattedDescription = HTMLprojectDescription.replace("%data%", projectData.projects[index].description);
+        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[index].description);
         $(".project-entry:last").append(formattedDescription);
 
-        if (projectData.projects[index].images.length > 0) {
-            for (image in projectData.projects[index].images) {
-                var formattedImage = HTMLprojectImage.replace("%data%", projectData.projects[index].images[image]);
+        if (projects.projects[index].images.length > 0) {
+            for (image in projects.projects[index].images) {
+                var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[index].images[image]);
                 $(".project-entry:last").append(formattedImage);
             }
         }
@@ -203,7 +200,7 @@ projectData.display = function() {
     }
 };
 
-projectData.display();
+projects.display();
 
 $("#mapDiv").append(googleMap);
 
