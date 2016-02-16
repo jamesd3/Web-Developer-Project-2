@@ -14,7 +14,7 @@ var bio = {
     "bioPic" : "images/JamesDeLapaIII.jpg"
 };
 
-function displayBio() {
+bio.display = function() {
     var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
     var formattedHeaderName = HTMLheaderName.replace("%data%", bio.name);
     var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
@@ -24,11 +24,11 @@ function displayBio() {
     $("#header").prepend(formattedHeaderName);
     $("#header").append(formattedBioPic);
     $("#header").append(formattedWelcomeMsg);
-}
+};
 
-displayBio();
+bio.display();
 
-function displayBioSkills() {
+bio.skills.display = function() {
     $("#header").append(HTMLskillsStart);
 
     var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
@@ -42,11 +42,11 @@ function displayBioSkills() {
 
     formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
     $("#skills").append(formattedSkill);
-}
+};
 
-displayBioSkills();
+bio.skills.display();
 
-function displayContacts() {
+bio.contacts.display = function() {
         var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
         var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
         var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
@@ -55,9 +55,9 @@ function displayContacts() {
 
         $("#topContacts").append(formattedContactData);
         $("#footerContacts").append(formattedContactData);
-    }
+    };
 
-displayContacts();
+bio.contacts.display();
 
 var work = {
     "jobs" : [
@@ -85,7 +85,7 @@ var work = {
     ]
 };
 
-function displayWork() {
+work.display = function() {
     for(job in work.jobs) {
         $("#workExperience").append(HTMLworkStart);
         // employer, title
@@ -100,9 +100,9 @@ function displayWork() {
 
         $(".work-entry:last").append(formattedEmployerDetails);
     }
-}
+};
 
-displayWork();
+work.display();
 
 var education = {
     "schools" : [
@@ -122,7 +122,7 @@ var education = {
         }]
 };
 
-function displayEducation() {
+education.display = function() {
     for(school in education.schools) {
         $("#education").append(HTMLschoolStart);
         // Degree and university
@@ -138,11 +138,11 @@ function displayEducation() {
         $(".education-entry:last").append(formattedEducation);
 
     }
-}
+};
 
-displayEducation();
+education.display();
 
-function displayOnEd() {
+education.display = function() {
     for(onlineCourse in education.onlineCourses) {
         $("#oned").append(HTMLonlineClasses);
         // Degree title, school name
@@ -156,9 +156,9 @@ function displayOnEd() {
 
         $(".oned-entry:last").append(formattedOnEd);
     }
-}
+};
 
-displayOnEd();
+education.display();
 
 var projectData = {
     "projects" : [
